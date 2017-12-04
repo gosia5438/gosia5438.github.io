@@ -1,15 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Moja strona Git Hub Pages</title>
+    <title>Formularz html5</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+            color: #000;
+            background-color: #f8f8f8;
+        }
+
+        fieldset#fieldset {
+            width: 500px;
+            border: solid #666;
+            padding: 40px;
+            border-radius: 10px;            
+        }
+    </style>
 </head>
+
 <body>
-<h1>Zadanie nr 1</h1>
-<p>Paragraf Uli</p>
-
-<p>Paragraf stworzony na gałęzi newbranch</p>
-<p>Paragraf na galezi master</p>
-
+    <form action="https://formspree.io/malgorzatamaciejowska21@gmail.com" method="post">
+        <fieldset id="fieldset">
+            <legend>Formularz kontaktowy</legend>
+            <label for="imie">Imię: </label>
+            <input type="text" name="imie" id="imie" maxlength="100" size="30"><br><br>
+            <label for="nazwisko">Nazwisko: </label>
+            <input type="text" name="nazwisko" id="nazwisko" maxlength="100" size="30"><br><br>
+            <label for="email">E-mail: </label>
+            <input type="email" name="email" id="email" size="30"><br><br>
+            <label for="telefon">Telefon: </label>
+            <input type="number" name="telefon" id="telefon" size="20">
+            <p><label for="lokalizacja">Wybór miasta: </label>
+                <select name="lokalizacja" id="lokalizacja">
+            <option value= "kr">Kraków</option>
+            <option value= "waw">Warszawa</option>
+            <option value= "gd">Gdańsk</option>
+            </select></p>
+            <br>
+            <label for="wiadomosc">Wiadomość:</label><br>
+            <textarea name="comments" id="wiadomosc" cols="45" maxlength="400" rows="4"></textarea>
+            <br>
+            <br>
+            <input type="checkbox" required><label>Wyrażam zgodę na przetwarzanie moich danych osobowych</label><br><br>
+            <input class="submit" type="submit" value="Prześlij">
+        </fieldset>
+    </form>
 </body>
+
 </html>
