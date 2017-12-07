@@ -1,5 +1,5 @@
 body {
-    font-family: 'Times New Roman', 'Arial', 'serif';
+    font-family: 'Times New Roman', 'Arial', serif;
     font-size: 14px;
 }
 
@@ -20,6 +20,7 @@ h2 {
     margin: 0;
     font-size: 1.1em;
     color: #9887f2;
+    font-style: italic;
 }
 fieldset {
     border-width: 1.5px;
@@ -34,9 +35,6 @@ legend {
 p {
     padding-left: 50px;
 }
-#books {
-    padding-left: 50px;
-}
 input.submit {
     margin: 10px 0;
     padding: 6px 12px;
@@ -47,7 +45,6 @@ input.submit {
     cursor: pointer;
     font-weight: 500;
 }
-
 input.submit:hover {
     background-color: #c0c4d7;
 }
