@@ -20,29 +20,23 @@ h2 {
     margin: 0;
     font-size: 1.1em;
     color: #9887f2;
-
 }
-
 fieldset {
     border-width: 1.5px;
     border-radius: 10px;
     padding: 10px;
     margin: 10px 0;
 }
-
 legend {
     font-weight: bold;
     color: #393939;
 }
-
 p {
     padding-left: 50px;
 }
-
 #books {
     padding-left: 50px;
 }
-
 input.submit {
     margin: 10px 0;
     padding: 6px 12px;
@@ -52,10 +46,8 @@ input.submit {
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
-
 }
 
 input.submit:hover {
     background-color: #c0c4d7;
-
 }
