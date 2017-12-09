@@ -5,15 +5,13 @@ body{
 
 }
 div#container {
-/*    margin: 10px auto;*/
+    margin: 10px auto;
+    width: 992px;
+    position: relative;   
+}
+div.wrapper {
     width: 100%;
-    position: absolute;
-/*
-    left: 50%;
-    margin-left: -40%;
-*/
-    
-    }
+}
 figure.box {
     width: 200px;
     height: 200px;
