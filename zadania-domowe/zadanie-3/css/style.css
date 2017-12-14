@@ -49,8 +49,8 @@ div.content {
 	width: 101%;
 	height: 1%;
 	background: #000;
-	-webkit-transition: height 3s ease-in;
-	transition: height 3s ease-in;
+	-webkit-transition: height 3s ease-in, opacity 4s ease-out;
+	transition: height 3s ease-in, opacity 4s ease-out;
 	z-index: -1;
 	opacity: 0;
 }
@@ -66,8 +66,8 @@ div.content {
 	background: #000;
 	left: -0.5%;
 	bottom: -1%;
-	-webkit-transition: height 3s ease-in;
-	transition: height 3s ease-in;
+	-webkit-transition: height 3s ease-in, opacity 4s ease-out;
+	transition: height 3s ease-in, opacity 4s ease-out;
 	z-index: -1;
 	opacity: 0;
 }
