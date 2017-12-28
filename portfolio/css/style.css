@@ -79,7 +79,7 @@ header#main-header {
 }
 
 div.main-header-content {
-    padding: 40vh;
+    padding-top: 35vh;
     color: #ffffff;
     display: -webkit-box;
     display: -ms-flexbox;
