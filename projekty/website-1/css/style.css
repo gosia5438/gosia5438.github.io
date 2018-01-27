@@ -1,0 +1,191 @@
+body {
+    font-family: 'Roboto Slab', serif;
+    color: #777;
+    height: 1700px;
+}
+section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+#main-nav {
+    transition: background .3s;
+}
+#main-nav a.navbar-brand {
+    color: #fff;
+    font-family: 'Droid Serif', sans-serif;
+    font-size: 2em;	
+}
+
+#main-nav .nav-item a {
+	color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    transition: all .8s;    
+}
+
+#main-nav .nav-item a:hover {
+    color: gray;
+}
+
+#main-nav.scroll {
+    background-color: rgba(14,216,214,.75);
+}
+
+#main-nav.scroll .nav-item a:hover {
+    color: gray;
+}
+
+/*----- HEADER---------*/
+#header-image {
+    background-image: url("../img/header/pictures_on_the_wall.jpg");
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+#header-image div.header-caption {
+    z-index: 1;
+    padding-top: 35vh;
+    color: #ffffff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+#header-image div.header-caption h2 {
+    font-family: 'Droid Serif', serif;
+    padding-bottom: 20px;
+}
+
+#header-image div.header-caption h1 {
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 20px;
+}
+
+/*----- SERVICES -------*/
+
+section#services {
+	text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+section h3 {
+    color: #000;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+section#services div.circle-icon {
+    margin: 5px auto;
+    background-color: #10d8d8;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 10px;
+    transition: all .3s;
+}
+
+section#services div.circle-icon a.soc-icon {
+    color: #fff;
+    font-size: 2em;
+    position: absolute;  
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all .2s;
+}
+section#services div.circle-icon:hover a.soc-icon{
+    transform: rotateY(180deg);
+    font-size: 2.2em;
+    color: #10d8d8;  
+    text-shadow: 4px 1px 4px gray;
+}
+section#services div.circle-icon:hover {
+    background-color: #fff;
+    border: 1px solid #10d8d8; 
+    box-shadow: 4px 1px 4px gray;
+}
+
+section#services h6 {
+    color: #000;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+----------PORTOFLIO ----------
+section#portfolio {
+    text-align: center;
+    padding-top: 40px;
+	background-color: #f7f7f7;
+}
+
+section#portfolio .details h4 {
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+section#portfolio .details h4 span {
+    font-family: 'Droid Serif', sans-serif;
+    color: gray;
+}
+
+
+section#portfolio .imgBox .img1 {    
+    background-position: center;
+    background-size: cover; 
+    background-image: url('../img/portfolio/box_of_cookies.jpg');
+    width: 100%;
+    height: 40vh;      
+}
+section#portfolio .imgBox .img2{
+    background-position: center;
+    background-size: cover; 
+    background-image: url('../img/portfolio/chaotic_paint.jpg');
+    width: 100%;
+    height: 40vh;  
+}
+
+section#portfolio .imgBox .img3 {
+    background-position: center;
+    background-size: cover; 
+    background-image: url('../img/portfolio/child_with_blue_paint.jpg');
+    width: 100%;
+    height: 40vh;  
+}
+
+section#portfolio .imgBox .img4 {
+    background-position: center;
+    background-size: cover; 
+    background-image: url('../img/portfolio/child_with_blue_paint.jpg');
+    width: 100%;
+    height: 40vh;  
+}
+
+section#portfolio .imgBox .img5 {
+    background-position: center;
+    background-size: cover; 
+    background-image: url('../img/portfolio/house_with_blue_doors.jpg');
+    width: 100%;
+    height: 40vh;  
+}
+
+section#portfolio .imgBox .img6 {
+    background-position: center;
+    background-size: cover; 
+    background-image: url('../img/portfolio/typing_on_laptop.jpg');
+    width: 100%;
+    height: 40vh;  
+    
+}
