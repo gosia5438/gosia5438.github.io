@@ -26,7 +26,7 @@ section {
 }
 
 #main-nav .nav-item a:hover {
-    color: gray;
+    color: #000;
 }
 
 #main-nav.scroll {
@@ -34,14 +34,14 @@ section {
 }
 
 #main-nav.scroll .nav-item a:hover {
-    color: gray;
+    color: #000;
 }
 
 
 /*----- HEADER---------*/
 
 #header-image {
-    background-image: url("../img/header/background.png"),url("../img/header/pictures_on_the_wall.jpg");
+    background-image: url("../img/header/background.png"), url("../img/header/pictures_on_the_wall.jpg");
     width: 100%;
     height: 100vh;
     background-position: center;
@@ -76,7 +76,8 @@ section {
     padding-bottom: 20px;
 }
 
-.view-more, .submit {
+.view-more,
+.submit {
     font-family: 'Montserrat', serif;
     text-transform: uppercase;
     padding: 10px 20px;
@@ -102,8 +103,8 @@ section h3 {
 
 section#services div.circle-icon {
     margin: 5px auto;
-   
-    background-image: linear-gradient(to top, #10d8d8 0%, #005bea  100%);
+
+    background-image: linear-gradient(to top, #10d8d8 0%, #005bea 100%);
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -156,6 +157,7 @@ section#portfolio {
     margin-top: 10px;
     padding-bottom: 2px;
 }
+
 .portfolio-box figcaption {
     padding-top: 5px;
 }
@@ -220,12 +222,12 @@ section#portfolio {
 
 .portfolio-image:hover .portfolio-mask {
     opacity: 1;
-    
+
 }
 
 .portfolio-image:hover {
     transform: scale(1.4);
-    
+
 }
 
 section#portfolio h4 {
@@ -295,6 +297,12 @@ section#contact {
     transform: translate(-50%, -50%);
 }
 
+#contact input,
+textarea {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8em;
+}
+
 #contact #contact-image h3 {
     color: #fff;
     padding-bottom: 10px;
@@ -305,8 +313,8 @@ section#contact {
     display: block;
 }
 
+
 #contact label,
 .text-muted {
     color: #fff;
 }
-
