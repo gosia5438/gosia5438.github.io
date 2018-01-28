@@ -1,8 +1,8 @@
 body {
     font-family: 'Roboto Slab', serif;
     color: #777;
-    height: 1700px;
 }
+
 section {
     padding: 60px 0;
     text-align: center;
@@ -11,16 +11,18 @@ section {
 #main-nav {
     transition: background .3s;
 }
+
 #main-nav a.navbar-brand {
     color: #fff;
     font-family: 'Droid Serif', sans-serif;
-    font-size: 2em;	
+    font-size: 1.8em;
 }
 
 #main-nav .nav-item a {
-	color: #fff;
+    color: #fff;
     font-family: 'Montserrat', sans-serif;
-    transition: all .8s;    
+    transition: all .8s;
+    text-align: right;
 }
 
 #main-nav .nav-item a:hover {
@@ -28,22 +30,25 @@ section {
 }
 
 #main-nav.scroll {
-    background-color: rgba(14,216,214,.75);
+    background-color: rgba(14, 216, 214, .75);
 }
 
 #main-nav.scroll .nav-item a:hover {
     color: gray;
 }
 
+
 /*----- HEADER---------*/
+
 #header-image {
-    background-image: url("../img/header/pictures_on_the_wall.jpg");
+    background-image: url("../img/header/background.png"),url("../img/header/pictures_on_the_wall.jpg");
     width: 100%;
     height: 100vh;
     background-position: center;
     background-size: cover;
     position: relative;
 }
+
 #header-image div.header-caption {
     z-index: 1;
     padding-top: 35vh;
@@ -58,6 +63,7 @@ section {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    text-align: center;
 }
 
 #header-image div.header-caption h2 {
@@ -70,13 +76,22 @@ section {
     padding-bottom: 20px;
 }
 
+.view-more, .submit {
+    font-family: 'Montserrat', serif;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 20px;
+
+}
+
 /*----- SERVICES -------*/
 
 section#services {
-	text-align: center;
+    text-align: center;
     padding-top: 40px;
     padding-bottom: 40px;
 }
+
 section h3 {
     color: #000;
     text-transform: uppercase;
@@ -87,7 +102,8 @@ section h3 {
 
 section#services div.circle-icon {
     margin: 5px auto;
-    background-color: #10d8d8;
+   
+    background-image: linear-gradient(to top, #10d8d8 0%, #005bea  100%);
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -99,93 +115,198 @@ section#services div.circle-icon {
 section#services div.circle-icon a.soc-icon {
     color: #fff;
     font-size: 2em;
-    position: absolute;  
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     transition: all .2s;
 }
-section#services div.circle-icon:hover a.soc-icon{
+
+section#services div.circle-icon:hover a.soc-icon {
     transform: rotateY(180deg);
-    font-size: 2.2em;
-    color: #10d8d8;  
-    text-shadow: 4px 1px 4px gray;
-}
-section#services div.circle-icon:hover {
-    background-color: #fff;
-    border: 1px solid #10d8d8; 
-    box-shadow: 4px 1px 4px gray;
+    font-size: 2em;
+    text-shadow: 4px 1px 4px #303030;
+    color: #fff;
 }
 
-section#services h6 {
+section#services div.circle-icon:hover {
+    background-image: linear-gradient(to top, #005bea 0%, #10d8d8 100%);
+    box-shadow: 4px 4px 5px #303030;
+}
+
+h6 {
     color: #000;
     font-family: 'Montserrat', sans-serif;
 }
 
 
-----------PORTOFLIO ----------
+/*----------PORTOFLIO ----------*/
+
 section#portfolio {
-    text-align: center;
-    padding-top: 40px;
-	background-color: #f7f7f7;
+    background-color: #f7f7f7;
 }
 
-section#portfolio .details h4 {
+.portfolio-image-container {
+    overflow: hidden;
+}
+
+.portfolio-box {
+    background-color: #fff;
+    border-radius: 20px 5px 5px 5px;
+    margin-top: 10px;
+    padding-bottom: 2px;
+}
+.portfolio-box figcaption {
+    padding-top: 5px;
+}
+
+#portfolio .portfolio-image {
+    overflow: hidden;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: all .5s;
+    margin-bottom: 20px;
+    border-radius: 15px 5px;
+}
+
+#portfolio-image-1 {
+    background-image: url('../img/portfolio/box_of_cookies.jpg');
+}
+
+#portfolio-image-2 {
+    background-image: url(../img/portfolio/chaotic_paint.jpg)
+}
+
+#portfolio-image-3 {
+    background-image: url(../img/portfolio/chestnut_on_bracket.jpg)
+}
+
+#portfolio-image-4 {
+    background-image: url(../img/portfolio/child_with_blue_paint.jpg)
+}
+
+#portfolio-image-5 {
+    background-image: url(../img/portfolio/house_with_blue_doors.jpg)
+}
+
+#portfolio-image-6 {
+    background-image: url(../img/portfolio/typing_on_laptop.jpg)
+}
+
+.portfolio-mask {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    mix-blend-mode: multiply;
+    background-image: linear-gradient(to top, #005bea 0%, #10d8d8 100%);
+    transition: all .3s;
+    opacity: 0;
+    border-radius: 30%;
+}
+
+.portfolio-mask i {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4em;
+    color: #fff;
+}
+
+.portfolio-image:hover .portfolio-mask {
+    opacity: 1;
+    
+}
+
+.portfolio-image:hover {
+    transform: scale(1.4);
+    
+}
+
+section#portfolio h4 {
     color: #333;
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 }
 
-section#portfolio .details h4 span {
+section#portfolio h4 span {
     font-family: 'Droid Serif', sans-serif;
     color: gray;
 }
 
 
-section#portfolio .imgBox .img1 {    
-    background-position: center;
-    background-size: cover; 
-    background-image: url('../img/portfolio/box_of_cookies.jpg');
-    width: 100%;
-    height: 40vh;      
-}
-section#portfolio .imgBox .img2{
-    background-position: center;
-    background-size: cover; 
-    background-image: url('../img/portfolio/chaotic_paint.jpg');
-    width: 100%;
-    height: 40vh;  
+/*----- SECTION MEET OUR TEAM -----*/
+
+.social-link {
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    line-height: 45px;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
+    border-radius: 50%;
+    font-size: 1.5em;
+    margin: 6px;
+    text-align: center;
+    transition: all .3s;
+    color: #fff;
 }
 
-section#portfolio .imgBox .img3 {
-    background-position: center;
-    background-size: cover; 
-    background-image: url('../img/portfolio/child_with_blue_paint.jpg');
-    width: 100%;
-    height: 40vh;  
+.social-link:hover {
+    background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+    color: #fff;
 }
 
-section#portfolio .imgBox .img4 {
-    background-position: center;
-    background-size: cover; 
-    background-image: url('../img/portfolio/child_with_blue_paint.jpg');
-    width: 100%;
-    height: 40vh;  
+.team-item {
+    text-align: center;
 }
 
-section#portfolio .imgBox .img5 {
-    background-position: center;
-    background-size: cover; 
-    background-image: url('../img/portfolio/house_with_blue_doors.jpg');
-    width: 100%;
-    height: 40vh;  
+.team-item img {
+    border-radius: 50%;
+    width: 200px;
+    padding-bottom: 10px;
 }
 
-section#portfolio .imgBox .img6 {
-    background-position: center;
-    background-size: cover; 
-    background-image: url('../img/portfolio/typing_on_laptop.jpg');
-    width: 100%;
-    height: 40vh;  
-    
+
+/*-------section contact --------------*/
+
+section#contact {
+    margin: 0;
+    padding: 0;
 }
+
+#contact-image {
+    background-image: url('../img/footer/back.png'), url('../img/footer/world-map.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.position-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#contact #contact-image h3 {
+    color: #fff;
+    padding-bottom: 10px;
+}
+
+#contact #contact-image p {
+    padding-bottom: 20px;
+    display: block;
+}
+
+#contact label,
+.text-muted {
+    color: #fff;
+}
+
