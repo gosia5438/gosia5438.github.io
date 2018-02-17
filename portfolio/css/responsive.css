@@ -101,11 +101,19 @@
     section {
         padding: 0 10px 30px;
     }
+    header#main-header{
+        height: 40vh;
+    }
+    div.main-header-content {
+        padding-top: 15vh;
+    }
     header#main-header > .main-header-content > h1 {
-        font-size: 1.5em;
+        font-size: 1.8em;
+        margin: 0;
     }
     header#main-header > .main-header-content > h2 {
-        font-size: 1em;
+        font-size: 1.5em;
+        margin: 0;
     }
     /*    -----------------PORTFOLIO----------------*/
     #portfolio > div.portfolio-items > figure.portfolio-item-1 {
