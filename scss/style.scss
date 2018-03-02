@@ -1,0 +1,565 @@
+@import "zmienne";
+@import "mixin";
+
+
+
+body {
+    font-family: $font_0;
+    font-size: 1em;
+    font-weight: 300;
+    background-color: $light-gray;
+    nav#main-nav {
+        background: transparent;
+        button {
+            border: 1px solid gray;
+        }
+        &.scroll {
+            background-color: transparentize($light-gray, .1);
+            .nav-item a {
+                color: $black;
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
+        .nav-item a {
+            color: $light-gray;
+            font-size: 1.1em;
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+    #header-section {
+        position: relative;
+        min-height: 500px;
+        overflow: hidden;
+        text-align: center;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+
+    }
+    .header-image {
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, $black_80, $black_0), $url_0;
+        animation: bg 20s linear infinite alternate;
+        max-width: 100%;
+        z-index: -1;
+    }
+    div.header-caption {
+        z-index: 1;
+        padding-top: 35vh;
+        @include center-elements;
+
+        h2 {
+            color: $red;
+            text-shadow: 0 0 150px $black;
+            padding-bottom: 10px;
+            font-size: 2.5em;
+        }
+        h1 {
+            color: $light-gray;
+            font-size: 4em;
+            text-shadow: 0 0 150px $black;
+        }
+        div.arrow-down {
+            margin-top: 250px;
+            position: relative;
+            width: 80px;
+            height: 80px;
+            overflow: hidden;
+            i.fas {
+                position: absolute;
+                font-size: 50px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: $light-gray;
+                animation: animate 2s linear infinite;
+                text-shadow: 0 2px 5px $black_80;
+                overflow: hidden;
+            }
+        }
+    }
+
+    section {
+        .about-me_container {
+            width: 100%;
+            @include center-elements;
+        }
+        &#about-me {
+            margin: 0 auto;
+            @include center-elements;
+            padding: 50px 0;
+            background: $light-gray;
+            width: 80%;
+            button {
+                margin-top: 20px;
+                border: none;
+                border-radius: 15px;
+                padding: 10px 25px;
+                background-color: $red;
+                transition: .5s ease-in-out;
+                box-shadow: 0 5px 4px $black_40;
+                background-color: $dark-blue;
+                margin-bottom: 20px;
+                &:hover {
+                    box-shadow: 0 1px 1px $black_30;
+                    background-color: lighten($dark-blue, 5%);
+                }
+                a {
+                    cursor: pointer;
+                    font-size: 1.2em;
+                    text-decoration: none;
+                    color: $light-gray;
+                }
+            }
+            img.about-me_image {
+                width: 180px;
+                border-radius: 50%;
+                margin-bottom: 15px;
+                filter: drop-shadow(0 0 5px $dark-blue);
+            }
+        }
+        h3 {
+            padding-bottom: 20px;
+            color: $dark-blue;
+            span {
+                color: $red;
+                font-weight: 800;
+            }
+        }
+        &#experience {
+            @include center-elements;
+            padding: 50px 0;
+            background-color: $red;
+            h3 {
+                font-family: $font_0;
+                font-size: 1em;
+                font-weight: 300;
+                font-size: 2em;
+                color: $light-gray;
+                span {
+                    color: $dark-blue;
+                }
+            }
+            time {
+                display: block;
+                font-size: 1.2rem;
+                font-weight: bold;
+                margin-bottom: 8px;
+            }
+            .timeline ul {
+                li {
+                    list-style-type: none;
+                    position: relative;
+                    width: 5px;
+                    margin: 0 auto;
+                    padding-top: 50px;
+                    background: $light-gray;
+                    div {
+                        position: relative;
+                        bottom: 0;
+                        width: 400px;
+                        padding: 15px;
+                        background: transparentize($light-gray, 0.1);
+                        box-shadow: 2px 3px 0 0 $gray;
+                        visibility: hidden;
+                        opacity: 0;
+                        transition: all .5s ease-in-out;
+                    }
+                    &.in-view::after {
+                        background: $dark-blue;
+                    }
+                    &:nth-child(odd) div {
+                        left: 45px;
+                        border-radius: 10px 10px 20px 5px;
+                        transform: translate(500px, 0);
+                    }
+                    &:nth-child(even) div {
+                        left: -439px;
+                        border-radius: 10px 10px 5px 20px;
+                        transform: translate(-500px, 0);
+                    }
+                    &.in-view div {
+                        transform: none;
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+                li::after {
+                    content: '';
+                    position: absolute;
+                    left: 50%;
+                    bottom: 0;
+                    transform: translateX(-50%);
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    background: inherit;
+                    transition: background .5s ease-in-out;
+                }
+            }
+        }
+        &#skills {
+            @include center-elements;
+            padding-top: 50px;
+            margin-bottom: 50px;
+            box-sizing: border-box;
+            .icons {
+                color: $dark-blue;
+            }
+            .icon-box {
+                height: 96px;
+                .icons-img {
+                    height: 90px;
+                    width: 90px;
+                }
+            }
+            h6 {
+                color: $black;
+            }
+            .skills_container {
+                width: 90%;
+            }
+            div.progressBar {
+                position: relative;
+                background: $light-gray;
+                width: 70%;
+                height: 15px;
+                margin: 21px auto;
+                border-radius: 20px;
+                border: 0.5px solid $gray;
+                .title {
+                    position: absolute;
+                    font-size: 12px;
+                    padding-left: 10px;
+                    float: left;
+                    color: $light-gray;
+                    line-height: 1.1;
+                    z-index: 1;
+                }
+                .progress_value {
+                    position: relative;
+                    float: right;
+                    line-height: 1.1;
+                    color: $gray;
+                    z-index: 1;
+                    padding-right: 10px;
+                }
+                .progress {
+                    height: 14px;
+                    position: absolute;
+                    border-radius: 20px;
+                    background: $dark-blue;
+                }
+                .progress-blue {
+                    height: 14px;
+                    position: absolute;
+                    border-radius: 20px;
+                    background: $red;
+                }
+            }
+        }
+        &#portfolio {
+            @include center-elements;
+            padding: 50px 0;
+            background-color: $light-gray;
+        }
+        &#graphic-portfolio {
+            padding: 100px 0;
+            @include center-elements;
+            div.graphic-box {
+                position: relative;
+                border-radius: 15px;
+                width: 216px;
+                height: 300px;
+                box-shadow: 0 0 35px 2px #919191;
+                margin: 15px auto;
+            }
+        }
+        &#contact {
+            @include center-elements;
+            padding-top: 50px;
+            background-image: $url_7;
+            background-color: $dark-blue;
+            h3 {
+                color: $light-gray;
+            }
+            h3 + p {
+                padding-bottom: 50px;
+            }
+            p {
+                color: $light-gray;
+
+                &.copy {
+                    padding-top: 40px;
+                    padding-bottom: 0;
+                    margin: 2px;
+                }
+            }
+            label {
+                color: $light-gray;
+            }
+            input {
+                box-shadow: inset 0 0 10px 5px transparentize($gray, .2);
+                outline: 1px;
+                padding-top: 6px;
+                padding-bottom: 5px;
+                &:focus {
+                    border: 1px solid $red;
+                }
+            }
+            textarea {
+                box-shadow: inset 0 0 10px 5px transparentize($gray, .2);
+                outline: 1px;
+                resize: none;
+                &:focus {
+                    border: 1px solid $red;
+                }
+            }
+            button {
+                margin-top: 20px;
+                border: none;
+                border-radius: 15px;
+                padding: 10px 25px;
+                background-color: $red;
+                transition: .5s ease-in-out;
+                box-shadow: 0 5px 4px $black_40;
+                &:hover {
+                    box-shadow: 0 1px 1px $black_30;
+                    background-color: lighten($red, 3%);
+                }
+                a {
+                    color: $light-gray;
+                    cursor: pointer;
+                    font-size: 1.2em;
+                    text-decoration: none;
+                }
+            }
+            ul.social-icons {
+                padding: 5px 0 0;
+                li {
+                    list-style: none;
+                    display: inline-block;
+                    a {
+                        position: relative;
+                        width: 35px;
+                        height: 35px;
+                        display: block;
+                        text-align: center;
+                        margin: 0 2px;
+                        border-radius: 50%;
+                        padding: 5px;
+                        box-sizing: border-box;
+                        text-decoration: none;
+                        box-shadow: 0 7px 5px $black_30;
+                        background: linear-gradient(0deg, $gray, $white);
+                        transition: .5s;
+                        &:hover {
+                            box-shadow: 0 2px 2px $black_30;
+                            .fab {
+                                color: $red;
+                            }
+                        }
+                        .fab {
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            background: linear-gradient(0deg, $white, $gray);
+                            border-radius: 50%;
+                            line-height: calc(35px - 10px);
+                            font-size: 20px;
+                            color: $dark-blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .portfolio-image-container {
+        overflow: hidden;
+    }
+    .portfolio-mask {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        mix-blend-mode: multiply;
+        background: $dark-blue;
+        transition: all .3s;
+        opacity: 0;
+        border-radius: 30%;
+    }
+    .portfolio-box {
+        background-color: $light-gray;
+        overflow: hidden;
+        border-radius: 20px 5px 5px 5px;
+        margin-top: 10px;
+        border-radius: 15px 15px;
+        box-shadow: 0 0 35px 2px $gray;
+        figcaption {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: $light-gray;
+            border-radius: 15px;
+            transition: all .3s;
+            opacity: 0;
+            h4 {
+                font-size: 18px;
+                padding-bottom: 5px;
+            }
+            p {
+                font-size: 10px;
+            }
+        }
+    }
+    #portfolio-image-1 {
+        background-image: $url_1;
+    }
+    #portfolio-image-2 {
+        background-image: $url_2;
+    }
+    #portfolio-image-3 {
+        background-image: $url_3;
+    }
+    #portfolio-image-4 {
+        background-image: $url_4;
+    }
+    #portfolio-image-5 {
+        background-image: $url_5;
+    }
+    #portfolio-image-6 {
+        background-image: $url_6;
+    }
+
+    #portfolio .portfolio-image {
+        overflow: hidden;
+        height: 301px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        transition: all .5s;
+        border-radius: 15px 15px;
+        box-shadow: $black_80 0 0 250px inset;
+    }
+    .portfolio-image:hover {
+        transform: scale(1.4);
+        .portfolio-mask {
+            opacity: 1;
+        }
+        figcaption {
+            opacity: 1;
+        }
+    }
+
+
+    .slider-box {
+        padding: 50px 0;
+    }
+    .carousel-inner img {
+        width: 70%;
+        height: 70%;
+        box-shadow: 0 0 35px 2px $gray;
+    }
+    .carousel-indicators li {
+        background-color: $dark-blue;
+        &:hover {
+            background-color: $red;
+        }
+        &.active {
+            background-color: lighten($red, 3%);
+        }
+    }
+    a.scroll-top {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: $dark-blue;
+        color: $white;
+        padding: 10px 15px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        &:hover {
+            background-color: $red;
+            color: $white;
+        }
+    }
+
+    @keyframes bg {
+        0% {
+            transform: scale(1.15);
+            transform-origin: center top;
+        }
+        100% {
+            transform: scale(1);
+            transform-origin: center top;
+        }
+    }
+
+    @keyframes animate {
+        0% {
+            opacity: 0;
+            top: -10%;
+        }
+        20% {
+            opacity: 1;
+            top: 50%;
+        }
+        40% {
+            top: 30%;
+            opacity: 1;
+        }
+        80% {
+            top: 60%;
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            top: 110%;
+        }
+    }
+
+    @media screen and(max-width: 900px) {
+        section#experience .timeline ul li {
+            div {
+                width: 230px;
+                line-height: 1.4;
+            }
+            &:nth-child(even) div {
+                left: -270px;
+            }
+        }
+    }
+
+    @media screen and(max-width: 600px) {
+        section#experience .timeline ul li {
+            margin-left: 20px;
+            div {
+                width: calc(100vw - 165px);
+            }
+            &:nth-child(even) {
+                div { 
+                    left: 45px;
+                }
+                div::before {
+                    left: -15px;
+                    border-width: 8px 16px 8px 0;
+                    border-color: transparent $dark-blue transparent transparent;
+                }
+            }
+        }
+    }
+}
