@@ -10,9 +10,6 @@ body {
     background-color: $light-gray;
     nav#main-nav {
         background: transparent;
-        button {
-            border: 1px solid gray;
-        }
         &.scroll {
             background-color: transparentize($light-gray, .1);
             .nav-item a {
@@ -29,9 +26,14 @@ body {
                 color: $red;
             }
         }
+        .navbar-icon {
+            color: $gray;
+            font-size: 27px;
+        }
     }
     #header-section {
         position: relative;
+        height: 100vh;
         min-height: 500px;
         overflow: hidden;
         text-align: center;
@@ -40,6 +42,7 @@ body {
         justify-content: flex-end;
 
     }
+
     .header-image {
         position: absolute;
         background-size: cover;
@@ -48,7 +51,7 @@ body {
         width: 100%;
         height: 100%;
         background-image: linear-gradient(to bottom, $black_80, $black_0), $url_0;
-        animation: bg 20s linear infinite alternate;
+        animation: bg 15s linear infinite alternate;
         max-width: 100%;
         z-index: -1;
     }
@@ -58,15 +61,15 @@ body {
         @include center-elements;
 
         h2 {
-            color: $red;
-            text-shadow: 0 0 150px $black;
+            color: $light-gray;
+            text-shadow: 2px 1px 0 $red;
             padding-bottom: 10px;
             font-size: 2.5em;
         }
         h1 {
             color: $light-gray;
             font-size: 4em;
-            text-shadow: 0 0 150px $black;
+            text-shadow: 2px 2px 0 $dark-blue;
         }
         div.arrow-down {
             margin-top: 250px;
@@ -76,14 +79,12 @@ body {
             overflow: hidden;
             i.fas {
                 position: absolute;
-                font-size: 50px;
+                font-size: 40px;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
                 color: $light-gray;
-                animation: animate 2s linear infinite;
-                text-shadow: 0 2px 5px $black_80;
-                overflow: hidden;
+                text-shadow: 0 2px 5px $black_40;
             }
         }
     }
@@ -100,17 +101,10 @@ body {
             background: $light-gray;
             width: 80%;
             button {
-                margin-top: 20px;
-                border: none;
-                border-radius: 15px;
-                padding: 10px 25px;
-                background-color: $red;
-                transition: .5s ease-in-out;
-                box-shadow: 0 5px 4px $black_40;
+                @include button;
                 background-color: $dark-blue;
                 margin-bottom: 20px;
                 &:hover {
-                    box-shadow: 0 1px 1px $black_30;
                     background-color: lighten($dark-blue, 5%);
                 }
                 a {
@@ -132,13 +126,14 @@ body {
             color: $dark-blue;
             span {
                 color: $red;
-                font-weight: 800;
+                font-weight: 800; 
             }
         }
         &#experience {
             @include center-elements;
             padding: 50px 0;
             background-color: $red;
+            overflow-x: hidden;
             h3 {
                 font-family: $font_0;
                 font-size: 1em;
@@ -162,7 +157,7 @@ body {
                     width: 5px;
                     margin: 0 auto;
                     padding-top: 50px;
-                    background: $light-gray;
+                    background: $light-gray;                    
                     div {
                         position: relative;
                         bottom: 0;
@@ -269,11 +264,11 @@ body {
         }
         &#portfolio {
             @include center-elements;
-            padding: 50px 0;
+            padding: 0;
             background-color: $light-gray;
         }
         &#graphic-portfolio {
-            padding: 100px 0;
+            padding: 50px 0;
             @include center-elements;
             div.graphic-box {
                 position: relative;
@@ -325,15 +320,9 @@ body {
                 }
             }
             button {
-                margin-top: 20px;
-                border: none;
-                border-radius: 15px;
-                padding: 10px 25px;
+                @include button;
                 background-color: $red;
-                transition: .5s ease-in-out;
-                box-shadow: 0 5px 4px $black_40;
                 &:hover {
-                    box-shadow: 0 1px 1px $black_30;
                     background-color: lighten($red, 3%);
                 }
                 a {
@@ -359,11 +348,11 @@ body {
                         padding: 5px;
                         box-sizing: border-box;
                         text-decoration: none;
-                        box-shadow: 0 7px 5px $black_30;
+                        box-shadow: 0 3px 1px $black_30;
                         background: linear-gradient(0deg, $gray, $white);
                         transition: .5s;
                         &:hover {
-                            box-shadow: 0 2px 2px $black_30;
+                            box-shadow: 0 0 0 $black_30;
                             .fab {
                                 color: $red;
                             }
@@ -393,16 +382,14 @@ body {
         top: 0;
         bottom: 0;
         margin: auto;
-        mix-blend-mode: multiply;
         background: $dark-blue;
-        transition: all .3s;
+        mix-blend-mode: multiply;
         opacity: 0;
-        border-radius: 30%;
+        transition: all 1s;
     }
     .portfolio-box {
         background-color: $light-gray;
         overflow: hidden;
-        border-radius: 20px 5px 5px 5px;
         margin-top: 10px;
         border-radius: 15px 15px;
         box-shadow: 0 0 35px 2px $gray;
@@ -412,8 +399,7 @@ body {
             top: 50%;
             transform: translate(-50%, -50%);
             color: $light-gray;
-            border-radius: 15px;
-            transition: all .3s;
+            transition: all 1s;
             opacity: 0;
             h4 {
                 font-size: 18px;
@@ -445,12 +431,12 @@ body {
 
     #portfolio .portfolio-image {
         overflow: hidden;
-        height: 301px;
+        height: 300px;
         background-size: cover;
         background-position: center;
         position: relative;
-        transition: all .5s;
-        border-radius: 15px 15px;
+        transition: all 1s ease-out;
+        border: none;
         box-shadow: $black_80 0 0 250px inset;
     }
     .portfolio-image:hover {
@@ -468,18 +454,26 @@ body {
         padding: 50px 0;
     }
     .carousel-inner img {
-        width: 70%;
-        height: 70%;
-        box-shadow: 0 0 35px 2px $gray;
+        width: 100%;
+        height: 100%;
     }
     .carousel-indicators li {
         background-color: $dark-blue;
+        height: 4px;
         &:hover {
             background-color: $red;
         }
         &.active {
             background-color: lighten($red, 3%);
         }
+    }
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 5%;
+        bottom: -25px;
+    }
+    i.slider-arrow {
+        color: $red;
     }
     a.scroll-top {
         display: none;
@@ -500,7 +494,7 @@ body {
 
     @keyframes bg {
         0% {
-            transform: scale(1.15);
+            transform: scale(1.25);
             transform-origin: center top;
         }
         100% {
@@ -509,26 +503,10 @@ body {
         }
     }
 
-    @keyframes animate {
-        0% {
-            opacity: 0;
-            top: -10%;
-        }
-        20% {
-            opacity: 1;
-            top: 50%;
-        }
-        40% {
-            top: 30%;
-            opacity: 1;
-        }
-        80% {
-            top: 60%;
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-            top: 110%;
+    @media screen and(max-width: 1500px) {
+        .carousel-inner img {
+            width: 90%;
+            height: 90%;
         }
     }
 
@@ -542,7 +520,11 @@ body {
                 left: -270px;
             }
         }
+        div.header-caption div.arrow-down {
+            margin-top: 215px;
+        }
     }
+
 
     @media screen and(max-width: 600px) {
         section#experience .timeline ul li {
@@ -551,7 +533,7 @@ body {
                 width: calc(100vw - 165px);
             }
             &:nth-child(even) {
-                div { 
+                div {
                     left: 45px;
                 }
                 div::before {
@@ -559,6 +541,14 @@ body {
                     border-width: 8px 16px 8px 0;
                     border-color: transparent $dark-blue transparent transparent;
                 }
+            }
+        }
+        header#header-section .header-caption {
+            h2 {
+                font-size: 2em;
+            }
+            h1 {
+                font-size: 3em;
             }
         }
     }
