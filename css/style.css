@@ -467,9 +467,9 @@ body {
       body .portfolio-box figcaption p {
         font-size: 10px; }
   body #portfolio-image-1 {
-    background-image: url(../images/portfolio/page.jpg); }
-  body #portfolio-image-2 {
     background-image: url(../images/portfolio/page2.jpg); }
+  body #portfolio-image-2 {
+    background-image: url(../images/portfolio/page.jpg); }
   body #portfolio-image-3 {
     background-image: url(../images/portfolio/calculator.jpg); }
   body #portfolio-image-4 {
