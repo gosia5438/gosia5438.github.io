@@ -93,7 +93,7 @@ $(function () {
             width: '70%'
         }, 2000);
         $('.wp').animate({
-            width: '25%'
+            width: '55%'
         }, 2000);
         $('.ps').animate({
             width: '75%'
